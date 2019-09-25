@@ -12,11 +12,6 @@ public class C {
         System.out.printf("C\nNon-static attribute: %s\nStatic attribute: %s\n", c_attribute, counter);
     }
 
-    public void increment_attributes() {
-        c_attribute++;
-        counter++;
-    }
-
     public static void main(String[] args) {
         C c1 = new C(5);
         c1.show_attributes();
