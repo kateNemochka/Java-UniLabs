@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a0aaff0-27f2-4d7a-b25f-451f941e395b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProgrammingTechnologies/META-INF/ProgrammingTechnologies.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Practice2/ABCD/C.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Practice2/ABCD/C.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProgrammingTechnologies/Practice2/ABCD/C.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProgrammingTechnologies/Practice2/ABCD/C.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lab1/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab1/Car.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +50,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Student">
+  <component name="RunManager" selected="Application.Car">
     <configuration name="A" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Practice2.ABCD.A" />
       <module name="ProgrammingTechnologies" />
@@ -65,12 +64,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="C" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Practice2.ABCD.C" />
+    <configuration name="Car" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Lab1.Car" />
       <module name="ProgrammingTechnologies" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Practice2.ABCD.*" />
+          <option name="PATTERN" value="Lab1.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -119,11 +118,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Car" />
+        <item itemvalue="Application.A" />
         <item itemvalue="Application.Student" />
         <item itemvalue="Application.TrafficLights" />
         <item itemvalue="Application.Student0" />
-        <item itemvalue="Application.A" />
-        <item itemvalue="Application.C" />
       </list>
     </recent_temporary>
   </component>
@@ -138,6 +137,14 @@
       <option name="presentableId" value="Default" />
       <updated>1568649174981</updated>
     </task>
+    <task id="LOCAL-00001" summary="deleted unnecessary method">
+      <created>1569419847269</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1569419847269</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -145,10 +152,16 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="deleted unnecessary method" />
+    <option name="LAST_COMMIT_MESSAGE" value="deleted unnecessary method" />
   </component>
 </project>
