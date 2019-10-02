@@ -10,35 +10,93 @@
 package Lab1;
 
 
+import java.util.Arrays;
+
 public class Car implements Comparable<Car> {
 
     private int carId;
     private static int nextId = 1;
-    private String brand;
-    private int year;
+    private TechnicalPassport techPassport;
     private int speed;
 
 
     public Car() {
         carId = nextId++;
         speed = 0;
-        this.brand = "Brand Unknown";
-        this.year = -1;
+        techPassport = new TechnicalPassport();
     }
 
-    public Car(String brand, int year) {
+    public Car(String brand, String regNumber, String color,
+               int productionYear, int engineVolume, int registrationYear) {
         carId = nextId++;
         speed = 0;
-        this.brand = brand;
-        this.year = year;
+        techPassport = new TechnicalPassport(brand, regNumber, color, productionYear,
+                                             engineVolume, registrationYear);
+    }
+
+
+    private class TechnicalPassport {
+        private String brand;
+        private String regNumber;
+        private String color;
+        private int productionYear;
+        private int engineVolume;
+        private int registrationYear;
+
+
+        TechnicalPassport() {
+            brand = "Unknown";
+            regNumber = "Unknown";
+            color = "Unknown";
+            productionYear = 0;
+            engineVolume = 0;
+            registrationYear = 0;
+        }
+
+        TechnicalPassport(String brand, String regNumber, String color,
+                          int productionYear, int engineVolume, int registrationYear) {
+            this.brand = brand;
+            this.regNumber = regNumber;
+            this.color = color;
+            this.productionYear = productionYear;
+            this.engineVolume = engineVolume;
+            this.registrationYear = registrationYear;
+        }
+
+        public void setProductionData(String brand, String color, int productionYear, int engineVolume) {
+            this.brand = brand;
+            this.color = color;
+            this.productionYear = productionYear;
+            this.engineVolume = engineVolume;
+        }
+
+        public void setRegistrationData(String regNumber, int registrationYear) {
+            this.regNumber = regNumber;
+            this.registrationYear = registrationYear;
+        }
+
+        public String getRegNumber() {
+            return regNumber;
+        }
+
+        public int getProductionYear() {
+            return productionYear;
+        }
+
+        public void info() {
+            System.out.printf("Brand: %s\nColor: %s\nProduction Year: %d\nEngine Volume: %d\n" +
+                            "Registration Number: %s\nRegistration Year: %d\n",
+                    brand, color, productionYear, engineVolume, regNumber, registrationYear);
+        }
+
     }
 
 
     public int compareTo(Car car) {
-        if (this.carId == car.carId) {
+        if (this.getRegNumber().equals(car.getRegNumber())) {
             return 0;
         }
-        else if (this.speed > car.carId) {
+        else if (this.getRegNumber().compareTo(car.getRegNumber()) < 0) {
             return 1;
         }
         else {
@@ -54,20 +112,8 @@ public class Car implements Comparable<Car> {
         return speed;
     }
 
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
+    public String getRegNumber() {
+        return techPassport.getRegNumber();
     }
 
 
@@ -84,25 +130,27 @@ public class Car implements Comparable<Car> {
     }
 
     public void info() {
-        System.out.printf("Car ID: %d\nBrand: %s\nYear: %d\nCurrent speed: %d km/h\n\n",
-                carId, brand, year, speed);
+        System.out.printf("Car ID: %d\n", carId);
+        techPassport.info();
+        System.out.printf("Current speed: %d\n\n", speed);
     }
 
 
     public static void main(String[] args) {
         // array with Car objects
-        Car[] cars = new Car[4];
-        cars[0] = new Car();
-        cars[1] = new Car("Nissan", 2008);
-        cars[2] = new Car("BMW", 2019);
-        cars[3] = new Car("Suzuki", 2017);
+        Car[] cars = new Car[2];
+        //cars[0] = new Car();
+        cars[0] = new Car("Nissan", "АІ7681ЕК", "black", 2008, 3, 2013);
+        cars[1] = new Car("BMW", "АА0000АА","green", 2019, 4, 2019 );
+
+        Arrays.sort(cars);
 
         // accelerating cars
         for (Car car : cars) {
             car.accelerate();
         }
         for (int i = 0; i <= 8; ++i) {
-            cars[i%4].accelerate(9 * (i % 5));
+            cars[i%2].accelerate(9 * (i % 5));
         }
 
         // displaying info about every car
@@ -117,11 +165,11 @@ public class Car implements Comparable<Car> {
             System.out.printf("\tDistance in 2 hours: %d km\n", distance(car.getSpeed(), 2));
         }
 
-        // adding car info
+        /*// adding car info
         System.out.println("\nAdding car 1 missing information");
         cars[0].setBrand("Tesla");
         cars[0].setYear(2015);
-        cars[0].info();
+        cars[0].info();*/
 
     }
 
