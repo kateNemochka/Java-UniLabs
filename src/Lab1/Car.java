@@ -4,6 +4,7 @@
 - інкапсуляція даних
 - статичне поле
 - статичний метод
+- внутрішній клас
 
 - створити масив об’єктів класу та виконати тести методів
 */
@@ -31,7 +32,7 @@ public class Car implements Comparable<Car> {
         carId = nextId++;
         speed = 0;
         techPassport = new TechnicalPassport(brand, regNumber, color, productionYear,
-                                             engineVolume, registrationYear);
+                engineVolume, registrationYear);
     }
 
 
@@ -45,9 +46,9 @@ public class Car implements Comparable<Car> {
 
 
         TechnicalPassport() {
-            brand = "Unknown";
-            regNumber = "Unknown";
-            color = "Unknown";
+            brand = null;
+            regNumber = null;
+            color = null;
             productionYear = 0;
             engineVolume = 0;
             registrationYear = 0;
@@ -93,15 +94,15 @@ public class Car implements Comparable<Car> {
 
 
     public int compareTo(Car car) {
-        if (this.getRegNumber().equals(car.getRegNumber())) {
-            return 0;
+        // Значення "Unknown" вважаються рівними "ЯЯ9999ЯЯ", щоб розмістити їх в кінці масиву при сортуванні
+        if (car.getRegNumber() == null) {
+            return this.getRegNumber().compareTo("ЯЯ9999ЯЯ");
         }
-        else if (this.getRegNumber().compareTo(car.getRegNumber()) < 0) {
-            return 1;
+        else if (this.getRegNumber() == null) {
+            return "ЯЯ9999ЯЯ".compareTo(car.getRegNumber());
         }
-        else {
-            return -1;
-        }
+        else
+            return this.getRegNumber().compareTo(car.getRegNumber());
     }
 
     public int getCarId() {
@@ -114,6 +115,20 @@ public class Car implements Comparable<Car> {
 
     public String getRegNumber() {
         return techPassport.getRegNumber();
+    }
+
+    public void setCarInfo(String brand, String regNumber, String color,
+                           int productionYear, int engineVolume, int registrationYear) {
+        techPassport.setProductionData(brand, color, productionYear, engineVolume);
+        techPassport.setRegistrationData(regNumber, registrationYear);
+    }
+
+    public void setCarRegInfo(String regNumber, int registrationYear) {
+        techPassport.setRegistrationData(regNumber, registrationYear);
+    }
+
+    public void setCarProdInfo(String brand, String color, int productionYear, int engineVolume) {
+        techPassport.setProductionData(brand, color, productionYear, engineVolume);
     }
 
 
@@ -138,10 +153,13 @@ public class Car implements Comparable<Car> {
 
     public static void main(String[] args) {
         // array with Car objects
-        Car[] cars = new Car[2];
-        //cars[0] = new Car();
-        cars[0] = new Car("Nissan", "АІ7681ЕК", "black", 2008, 3, 2013);
-        cars[1] = new Car("BMW", "АА0000АА","green", 2019, 4, 2019 );
+        int numberOfCars = 3;
+        Car[] cars = new Car[numberOfCars];
+        cars[0] = new Car();
+        cars[1] = new Car("Nissan", "ВІ7651ЕН", "black",
+                    2009, 3, 2015);
+        cars[2] = new Car("BMW", "АА7667АА","green",
+                    2019, 4, 2019 );
 
         Arrays.sort(cars);
 
@@ -165,12 +183,23 @@ public class Car implements Comparable<Car> {
             System.out.printf("\tDistance in 2 hours: %d km\n", distance(car.getSpeed(), 2));
         }
 
-        /*// adding car info
-        System.out.println("\nAdding car 1 missing information");
-        cars[0].setBrand("Tesla");
-        cars[0].setYear(2015);
-        cars[0].info();*/
+        // adding information about empty car entity
+        int noneIndex = -1;
+        for (int i = 0; i < numberOfCars; ++i) {
+            if (cars[i].getRegNumber() == null) {
+                noneIndex = i;
+                break;
+            }
+        }
+        System.out.println(noneIndex);
+        cars[noneIndex].setCarInfo("Tesla", "АІ2547АМ", "white",
+                            2015, 4, 2017);
 
+        Arrays.sort(cars);
+
+        for (Car car : cars) {
+            car.info();
+        }
     }
 
 }
