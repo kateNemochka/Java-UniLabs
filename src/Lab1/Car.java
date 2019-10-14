@@ -28,11 +28,10 @@ public class Car implements Comparable<Car> {
     }
 
     public Car(String brand, String regNumber, String color,
-               int productionYear, int engineVolume, int registrationYear) {
+               int productionYear, int registrationYear) {
         carId = nextId++;
         speed = 0;
-        techPassport = new TechnicalPassport(brand, regNumber, color, productionYear,
-                engineVolume, registrationYear);
+        techPassport = new TechnicalPassport(brand, regNumber, color, productionYear, registrationYear);
     }
 
 
@@ -41,7 +40,6 @@ public class Car implements Comparable<Car> {
         private String regNumber;
         private String color;
         private int productionYear;
-        private int engineVolume;
         private int registrationYear;
 
 
@@ -50,25 +48,22 @@ public class Car implements Comparable<Car> {
             regNumber = null;
             color = null;
             productionYear = 0;
-            engineVolume = 0;
             registrationYear = 0;
         }
 
         TechnicalPassport(String brand, String regNumber, String color,
-                          int productionYear, int engineVolume, int registrationYear) {
+                          int productionYear, int registrationYear) {
             this.brand = brand;
             this.regNumber = regNumber;
             this.color = color;
             this.productionYear = productionYear;
-            this.engineVolume = engineVolume;
             this.registrationYear = registrationYear;
         }
 
-        public void setProductionData(String brand, String color, int productionYear, int engineVolume) {
+        public void setProductionData(String brand, String color, int productionYear) {
             this.brand = brand;
             this.color = color;
             this.productionYear = productionYear;
-            this.engineVolume = engineVolume;
         }
 
         public void setRegistrationData(String regNumber, int registrationYear) {
@@ -85,16 +80,16 @@ public class Car implements Comparable<Car> {
         }
 
         public void info() {
-            System.out.printf("Brand: %s\nColor: %s\nProduction Year: %d\nEngine Volume: %d\n" +
+            System.out.printf("Brand: %s\nColor: %s\nProduction Year: %d\n" +
                             "Registration Number: %s\nRegistration Year: %d\n",
-                    brand, color, productionYear, engineVolume, regNumber, registrationYear);
+                    brand, color, productionYear, regNumber, registrationYear);
         }
 
     }
 
 
     public int compareTo(Car car) {
-        // Значення "Unknown" вважаються рівними "ЯЯ9999ЯЯ", щоб розмістити їх в кінці масиву при сортуванні
+        // Значення null вважаються рівними "ЯЯ9999ЯЯ", щоб розмістити їх в кінці масиву при сортуванні
         if (car.getRegNumber() == null) {
             return this.getRegNumber().compareTo("ЯЯ9999ЯЯ");
         }
@@ -118,8 +113,8 @@ public class Car implements Comparable<Car> {
     }
 
     public void setCarInfo(String brand, String regNumber, String color,
-                           int productionYear, int engineVolume, int registrationYear) {
-        techPassport.setProductionData(brand, color, productionYear, engineVolume);
+                           int productionYear, int registrationYear) {
+        techPassport.setProductionData(brand, color, productionYear);
         techPassport.setRegistrationData(regNumber, registrationYear);
     }
 
@@ -127,8 +122,8 @@ public class Car implements Comparable<Car> {
         techPassport.setRegistrationData(regNumber, registrationYear);
     }
 
-    public void setCarProdInfo(String brand, String color, int productionYear, int engineVolume) {
-        techPassport.setProductionData(brand, color, productionYear, engineVolume);
+    public void setCarProdInfo(String brand, String color, int productionYear) {
+        techPassport.setProductionData(brand, color, productionYear);
     }
 
 
@@ -147,8 +142,8 @@ public class Car implements Comparable<Car> {
     public void info() {
         System.out.printf("Car ID: %d\n", carId);
         techPassport.info();
-        System.out.printf("Current speed: %d\n\n", speed);
     }
+
 
 
     public static void main(String[] args) {
@@ -157,9 +152,9 @@ public class Car implements Comparable<Car> {
         Car[] cars = new Car[numberOfCars];
         cars[0] = new Car();
         cars[1] = new Car("Nissan", "ВІ7651ЕН", "black",
-                    2009, 3, 2015);
+                    2009, 2015);
         cars[2] = new Car("BMW", "АА7667АА","green",
-                    2019, 4, 2019 );
+                    2019, 2019 );
 
         Arrays.sort(cars);
 
@@ -193,7 +188,7 @@ public class Car implements Comparable<Car> {
         }
         System.out.println(noneIndex);
         cars[noneIndex].setCarInfo("Tesla", "АІ2547АМ", "white",
-                            2015, 4, 2017);
+                            2015, 2017);
 
         Arrays.sort(cars);
 
