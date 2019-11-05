@@ -9,12 +9,16 @@
       <change afterPath="$PROJECT_DIR$/src/CollectionsExamples/set.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/CollectionsExamples/set1.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/CollectionsExamples/set2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Lab1/ComfortTaxi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Lab1/GreenTaxi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Lab1/StandardTaxi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Lab1/Tariffs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Graphics/dialog.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Graphics/dialog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Graphics/form1.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Graphics/form1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Lab3/CollectionTaxiPark.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Lab3/MapTaxiPark.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Lab4/Task for Lab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Lab1/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab1/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lab1/Tariffs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab1/Tariffs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Lab1/Taxi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab1/Taxi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Lab1/TaxiPark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab1/TaxiPark.java" afterDir="false" />
     </list>
@@ -44,6 +48,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
@@ -63,13 +68,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TaxiPark">
-    <configuration name="Car" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Lab1.Car" />
+  <component name="RunManager" selected="Application.MapTaxiPark">
+    <configuration name="CollectionTaxiPark" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Lab3.CollectionTaxiPark" />
       <module name="ProgrammingTechnologies" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Lab1.*" />
+          <option name="PATTERN" value="Lab3.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -77,12 +82,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ComfortTaxi" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Lab1.ComfortTaxi" />
+    <configuration name="MapTaxiPark" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Lab3.MapTaxiPark" />
       <module name="ProgrammingTechnologies" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Lab1.*" />
+          <option name="PATTERN" value="Lab3.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -131,11 +136,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TaxiPark" />
+        <item itemvalue="Application.MapTaxiPark" />
         <item itemvalue="Application.Taxi" />
-        <item itemvalue="Application.ComfortTaxi" />
-        <item itemvalue="Application.Car" />
+        <item itemvalue="Application.CollectionTaxiPark" />
         <item itemvalue="Application.Tariffs" />
+        <item itemvalue="Application.TaxiPark" />
       </list>
     </recent_temporary>
   </component>
@@ -171,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570307487882</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="- finished Lab 2 classes, needs review">
+      <created>1571076954557</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1571076954557</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -191,6 +203,7 @@
     <MESSAGE value="deleted unnecessary method" />
     <MESSAGE value="Car class improvements" />
     <MESSAGE value="Class Car:&#10;- improved changeTo method (probably compareTo doesn't here well)&#10;- added main class methods that change Car technical passport data&#10;- replaced technical passport unknown values with null&#10;Taxi, TaxiPark:&#10;- creating basic template" />
-    <option name="LAST_COMMIT_MESSAGE" value="Class Car:&#10;- improved changeTo method (probably compareTo doesn't here well)&#10;- added main class methods that change Car technical passport data&#10;- replaced technical passport unknown values with null&#10;Taxi, TaxiPark:&#10;- creating basic template" />
+    <MESSAGE value="- finished Lab 2 classes, needs review" />
+    <option name="LAST_COMMIT_MESSAGE" value="- finished Lab 2 classes, needs review" />
   </component>
 </project>

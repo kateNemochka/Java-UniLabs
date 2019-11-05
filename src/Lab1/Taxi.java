@@ -15,7 +15,7 @@
 інформація про таксі
 скидання до дефолту
 * */
-
+// +техогляд?
 package Lab1;
 
 public class Taxi extends Car {
@@ -53,6 +53,10 @@ public class Taxi extends Car {
     }
 
 
+    public int getID() {
+        return taxiId;
+    }
+
     public String getTaxiType() {
         return "Basic taxi";
     }
@@ -82,6 +86,10 @@ public class Taxi extends Car {
         return profit / totalDistance;
     }
 
+    public double getFare(Tariffs tariff) {
+        return tariff.getFare(this.getClass());
+    }
+
 
     public void addRide(Tariffs tariff, double distance){
         double fare = tariff.calculateStandart(distance, 0);
@@ -109,14 +117,23 @@ public class Taxi extends Car {
     public void carInfo() {
         super.info();
     }
-    public void taxiInfo() {
-        System.out.printf("TAXI ID: %d\n", taxiId);
+    public final void taxiInfo() {
+        System.out.printf("--------\nTAXI ID: %d\n========\n", taxiId);
         System.out.println(getTaxiType());
         System.out.printf("Driver: %s\nTotal profit: %.2f\nTotal distance: %.2f\n",
                 driver, profit, totalDistance);
 
     }
 
+    @Override
+    public String toString() {
+        return "Taxi{" +
+                "taxiId=" + taxiId +
+                ", driver='" + driver + '\'' +
+                ", profit=" + profit +
+                ", totalDistance=" + totalDistance +
+                '}';
+    }
 
 
     public static void main(String[] args) {

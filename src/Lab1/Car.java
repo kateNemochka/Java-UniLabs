@@ -108,7 +108,25 @@ public class Car implements Comparable<Car> {
         return speed;
     }
 
-    public String getRegNumber() {
+
+    public String getColor() {
+        return techPassport.color;
+    }
+
+    public String getBrand() {
+        return techPassport.brand;
+    }
+
+    public int getProductionYear() {
+        return techPassport.productionYear;
+    }
+
+    public int getRegistrationYear() {
+        return techPassport.registrationYear;
+    }
+
+
+    public final String getRegNumber() {
         return techPassport.getRegNumber();
     }
 
@@ -118,11 +136,11 @@ public class Car implements Comparable<Car> {
         techPassport.setRegistrationData(regNumber, registrationYear);
     }
 
-    public void setCarRegInfo(String regNumber, int registrationYear) {
+    public final void setCarRegInfo(String regNumber, int registrationYear) {
         techPassport.setRegistrationData(regNumber, registrationYear);
     }
 
-    public void setCarProdInfo(String brand, String color, int productionYear) {
+    public final void setCarProdInfo(String brand, String color, int productionYear) {
         techPassport.setProductionData(brand, color, productionYear);
     }
 
@@ -131,11 +149,11 @@ public class Car implements Comparable<Car> {
         return speed * time;
     }
 
-    public void accelerate() {
+    public final void accelerate() {
         speed += 5;
     }
 
-    public void accelerate(int delta) {
+    public final void accelerate(int delta) {
         speed += delta;
     }
 

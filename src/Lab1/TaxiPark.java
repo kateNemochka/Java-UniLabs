@@ -44,7 +44,7 @@ public class TaxiPark {
     private Tariffs tariff;
 
 
-    TaxiPark(double fare) {
+    public TaxiPark(double fare) {
         cars = new ArrayList<Taxi>();
         tariff = new Tariffs(fare);
     }
@@ -118,6 +118,17 @@ public class TaxiPark {
     }
 
 
+    public Taxi getCar(int index) {
+        return cars.get(index);
+    }
+    public ArrayList<Taxi> getCars() {
+        return cars;
+    }
+    protected void setCars(ArrayList<Taxi> cars) {
+        this.cars = cars;
+        numberOfCars = cars.size();
+    }
+
     public double getTotalProfit() {
         double carProfit = 0;
         for (Taxi car : cars) {
@@ -177,6 +188,10 @@ public class TaxiPark {
         return carIndex;
     }
 
+    public Tariffs getTariff() {
+        return tariff;
+    }
+
 
     public ArrayList<Taxi> getStandardTaxis() {
         ArrayList<Taxi> taxis = new ArrayList<>();
@@ -234,7 +249,6 @@ public class TaxiPark {
     public void printParkTariffs() {
         tariff.info();
     }
-
 
 
     public static void main(String[] args) {

@@ -1,26 +1,28 @@
 package Lab1;
 
+import java.lang.reflect.Type;
+
 public class Tariffs {
     private double basicFare;
     private double night;
     private double comfort;
     private double green;
 
-    Tariffs() {
+    public Tariffs() {
         basicFare = 0.0;
         night = 0.0;
         comfort = 0.0;
         green = 0.0;
     }
 
-    Tariffs(double basicFare) {
+    public Tariffs(double basicFare) {
         this.basicFare = basicFare;
         this.night = basicFare / 4;
         this.comfort = basicFare / 2;
         this.green = basicFare / 4;
     }
 
-    Tariffs(double basicFare, double night, double comfort, double green) {
+    public Tariffs(double basicFare, double night, double comfort, double green) {
         this.basicFare = basicFare;
         this.night = night;
         this.comfort = comfort;
@@ -54,6 +56,19 @@ public class Tariffs {
     }
     public void setGreen(double green) {
         this.green = green;
+    }
+
+    public double getFare(Class<?> taxiType) {
+        if (taxiType == StandardTaxi.class) {
+            return getBasicFare();
+        }
+        else if (taxiType == ComfortTaxi.class) {
+            return getComfort() + getBasicFare();
+        }
+        else if (taxiType == GreenTaxi.class) {
+            return getGreen() + getBasicFare();
+        }
+        return 0.0;
     }
 
 
@@ -97,5 +112,7 @@ public class Tariffs {
         t1.setGreen(4.0);
 
         t1.info();
+
+        System.out.println(t1.getFare(GreenTaxi.class));
     }
 }
