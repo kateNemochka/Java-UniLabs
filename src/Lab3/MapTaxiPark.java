@@ -119,6 +119,9 @@ public class MapTaxiPark {
     public Tariffs getTariff() {
         return tariff;
     }
+    public void setTariff(Tariffs tariff) {
+        this.tariff = tariff;
+    }
 
     public void addRide(int type, double distance, boolean night) {
         ArrayList<Taxi> taxisOfType = (ArrayList<Taxi>) getTaxisOfType(type)
