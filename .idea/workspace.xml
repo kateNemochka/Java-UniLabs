@@ -2,25 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a0aaff0-27f2-4d7a-b25f-451f941e395b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/CollectionsExamples/UniqueDup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CollectionsExamples/aggOps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CollectionsExamples/iterators.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CollectionsExamples/list1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CollectionsExamples/set.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CollectionsExamples/set1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CollectionsExamples/set2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Graphics/dialog.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Graphics/dialog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Graphics/form1.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Graphics/form1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Lab3/CollectionTaxiPark.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Lab3/MapTaxiPark.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Lab4/Task for Lab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Lab4/AddCarWindow.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Lab4/AddCarWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Lab4/MainWindow.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Lab4/MainWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Lab4/NewCar.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Lab4/NewCar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Lab4/NewRideWarning.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Lab4/NewRideWarning.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Lab4/TariffsWindow.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Lab4/TariffsWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Lab4/TaxiWindow.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Lab4/TaxiWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fstfrm.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fstfrm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab1/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab1/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab1/Tariffs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab1/Tariffs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab1/Taxi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab1/Taxi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab1/TaxiPark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab1/TaxiPark.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgrammingTechnologies.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ProgrammingTechnologies.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lab3/CollectionTaxiPark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab3/CollectionTaxiPark.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lab3/MapTaxiPark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab3/MapTaxiPark.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lab4/Task for Lab" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab4/Task for Lab" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,12 +46,13 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="345" />
+    <property name="last_opened_file_path" value="$APPLICATION_HOME_DIR$/jbr/lib/lib" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -68,13 +71,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MapTaxiPark">
-    <configuration name="CollectionTaxiPark" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Lab3.CollectionTaxiPark" />
+  <component name="RunManager" selected="Application.MainWindow">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Lab4.Main" />
       <module name="ProgrammingTechnologies" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Lab3.*" />
+          <option name="PATTERN" value="Lab4.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Lab4.MainWindow" />
+      <module name="ProgrammingTechnologies" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Lab4.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -95,52 +111,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tariffs" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Lab1.Tariffs" />
+    <configuration name="form1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="form1" />
       <module name="ProgrammingTechnologies" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Lab1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Taxi" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Lab1.Taxi" />
+    <configuration name="fstfrm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="fstfrm" />
       <module name="ProgrammingTechnologies" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Lab1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TaxiPark" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Lab1.TaxiPark" />
-      <module name="ProgrammingTechnologies" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Lab1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainWindow" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.fstfrm" />
+        <item itemvalue="Application.form1" />
         <item itemvalue="Application.MapTaxiPark" />
-        <item itemvalue="Application.Taxi" />
-        <item itemvalue="Application.CollectionTaxiPark" />
-        <item itemvalue="Application.Tariffs" />
-        <item itemvalue="Application.TaxiPark" />
       </list>
     </recent_temporary>
   </component>
@@ -183,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571076954557</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="- finished Lab 3, added Lab 4 task">
+      <created>1572945218814</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1572945218814</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -204,6 +202,7 @@
     <MESSAGE value="Car class improvements" />
     <MESSAGE value="Class Car:&#10;- improved changeTo method (probably compareTo doesn't here well)&#10;- added main class methods that change Car technical passport data&#10;- replaced technical passport unknown values with null&#10;Taxi, TaxiPark:&#10;- creating basic template" />
     <MESSAGE value="- finished Lab 2 classes, needs review" />
-    <option name="LAST_COMMIT_MESSAGE" value="- finished Lab 2 classes, needs review" />
+    <MESSAGE value="- finished Lab 3, added Lab 4 task" />
+    <option name="LAST_COMMIT_MESSAGE" value="- finished Lab 3, added Lab 4 task" />
   </component>
 </project>

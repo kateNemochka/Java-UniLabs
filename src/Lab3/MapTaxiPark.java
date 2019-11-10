@@ -36,6 +36,23 @@ public class MapTaxiPark {
 
     }
 
+    public void addRandomCar() {
+        String[] brands = new String[]{"Mazda", "BMW", "Nissan", "Suzuki", "Audi", "Daewoo", "Ford", "Toyota", "Seat"};
+        String[] colors = new String[]{"red", "silver", "black", "yellow", "blue", "white", "gray"};
+        String[] regionCodes = new String[]{"AA", "AI", "BH", "BC", "CB", "BI", "AE", "AT", "BK"};
+
+        int type = random.nextInt(3);
+        int registrationYear = 2019 - random.nextInt(5);
+        int productionYear = registrationYear - random.nextInt(5);
+        String regNumber = regionCodes[random.nextInt(regionCodes.length)]
+                + (random.nextInt(8999) + 1000)
+                + regionCodes[random.nextInt(regionCodes.length)];
+        String brand = brands[random.nextInt(brands.length)];
+        String color = colors[random.nextInt(colors.length)];
+
+        addTaxi(type, brand, regNumber, color, productionYear, registrationYear);
+    }
+
     public void addTaxi(int type, String brand, String regNumber, String color,
                         int productionYear, int registrationYear) {
         numberOfCars++;
@@ -68,9 +85,10 @@ public class MapTaxiPark {
         }
     }
 
-    public void removeTaxi(int taxiID) {
+    public int removeTaxi(int taxiID) {
         numberOfCars--;
         cars.remove(taxiID);
+        return taxiID;
     }
 
     public void setDriver(int taxiID, String driver) {
@@ -85,6 +103,17 @@ public class MapTaxiPark {
 
     public Map<Integer, Taxi> getCars() {
         return cars;
+    }
+
+    public int getNumberOfCars() {
+        return numberOfCars;
+    }
+    public int getNumberOfCars(int type) {
+        return getTaxisOfType(type).size();
+    }
+
+    public ArrayList<Integer> getTaxiIDs() {
+        return new ArrayList<Integer>(cars.keySet());
     }
 
     public Tariffs getTariff() {
@@ -135,6 +164,16 @@ public class MapTaxiPark {
                 .stream()
                 .filter(taxi -> taxi.getClass() == taxiTypes.get(type))
                 .collect(Collectors.toList());
+    }
+
+    public String getTaxiInformationBrief(int taxiID) {
+        Taxi taxi = getTaxi(taxiID);
+        return "--------\nTAXI ID: "+ taxiID +"\n========\n"
+                + taxi.getTaxiType() + "\n"
+                + "Driver: " + taxi.getDriver()
+                + "\nTotal Profit: " + String.valueOf(taxi.getProfit())
+                + "\nTotal Distance: " + String.valueOf(taxi.getTotalDistance());
+
     }
 
     public ArrayList<Taxi> getTaxisWithoutDriver() {
@@ -274,7 +313,7 @@ public class MapTaxiPark {
         taxiPark.printTaxiParkInfoBrief();
 
         System.out.println("\n==== REMOVING CARS WITH MORE THAN 3000 KM DISTANCE ====");
-        taxiPark.removeTaxisWithDistanceOver(3000);
+        taxiPark.removeTaxisWithDistanceOver(2500);
         taxiPark.printTaxiParkInfoBrief();
 
         System.out.println("\n==== AFTER LAMBDA SORT BY PROFIT ====");

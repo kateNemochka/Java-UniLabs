@@ -8,36 +8,10 @@ package Lab3;
     •	порівнювати об’єкти за різними критеріями якості;
     •	виконувати операцію фільтрації об’єктів за заданою ознакою,
     •	виконувати визначення середнього значення кількісної ознаки об’єкта.
-*/
-/*
 2.	Розробити метод для сортування об’єктів за вибраним критерієм якості, використовуючи різні способи:
-*/
-/*  1) з анонімним класом,
-            interface HelloWorld {
-                public void greet();
-                public void greetSomeone(String someone);
-            }
-            public void sayHello() {
-                class EnglishGreeting implements HelloWorld {
-                    String name = "world";
-                    public void greet() {
-                        greetSomeone("world");
-                    };
-                    public void greetSomeone(String someone) {
-                        name = someone;
-                        System.out.println("Hello " + name);
-                    }
-                }*/
-/*  2) з лямбда-виразом,
-            myShapesCollection.stream()
-                .filter( e -> e.getColor() == Color.RED)
-                .forEach(e -> System.out.println(e.getName()));*/
-/*  3) з посиланням на методи.
-            String joined = elements.stream()
-                    .map( Object::toString )
-                    .collect(Collectors.joining(", "));
-            int total = employees.stream()
-                    .collect(Collectors.summingInt( Employee::getSalary)));
+    1) з анонімним класом
+    2) з лямбда-виразом
+    3) з посиланням на методи.
     Зробити висновки про переваги кожного способу  (20 балів).
 */
 
@@ -170,7 +144,6 @@ public class CollectionTaxiPark extends TaxiPark {
         taxis.sort(Comparator.comparing(Taxi::getProfit));
         setCars(taxis);
     }
-
     public void anonymousSort() {
         ArrayList<Taxi> taxis = getCars();
         taxis.sort(new Comparator<Taxi>() {
