@@ -31,7 +31,7 @@ public class ComfortTaxi extends Taxi{
 
     @Override
     public String getTaxiType() {
-        return "Comfort taxi";
+        return "Comfort";
     }
 
 

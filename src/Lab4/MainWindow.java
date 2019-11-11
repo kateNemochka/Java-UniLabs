@@ -1,54 +1,55 @@
 package Lab4;
 
 import Lab1.Taxi;
-import Lab3.MapTaxiPark;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import javax.swing.table.DefaultTableModel;
+import java.awt.*;
+import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.NoSuchElementException;
 import java.util.Random;
 
-public class MainWindow {
-    private JPanel panel1;
-    private JButton addRideButton;
-    private JButton addTaxiButton;
-    private JLabel quantityStandart;
-    private JLabel quantityComfort;
-    private JLabel quantityGreen;
-    private JLabel updateLabel;
-    private JButton removeTaxiButton;
-    private JLabel quantityAll;
-    private JRadioButton autoRideOn;
+public class MainWindow extends ConstantsClass {
+    private JPanel panel;
     private JLabel statLabel;
     private JLabel ridesCountLabel;
     private JLabel profitLabel;
-    private JLabel stFareLabel;
-    private JLabel comfFareLabel;
-    private JLabel ecoFareLabel;
-    private JLabel nigthFareLabel;
-    private JRadioButton autoRideOff;
-    private JButton змінитиТарифиButton;
-    private MapTaxiPark taxiPark;
+    private JLabel quantityStandart, quantityComfort, quantityGreen, quantityAll;
+    private JLabel stFareLabel, comfFareLabel, ecoFareLabel, nightFareLabel;
+    private JLabel updateLabel;
+    private JButton addRideButton;
+    private JButton addTaxiButton, removeTaxiButton;
+    private JRadioButton autoRideOn, autoRideOff;
+
+    private JButton modifyTariffsButton;
+    private JTabbedPane tabbedPane;
+    private JPanel updatePanel;
+    private JTable taxiTable;
+    private JScrollPane carListPanel;
+    private JButton generateTaxiButton;
 
 
     public MainWindow() {
-        taxiPark = new MapTaxiPark(10);
+
         // general statistics
         profitLabel.setText("0.0");
         ridesCountLabel.setText("0");
+
         // setting cars quantity
         quantityStandart.setText("0");
         quantityComfort.setText("0");
         quantityGreen.setText("0");
         quantityAll.setText("0");
+
         // setting fare values
         stFareLabel.setText(String.valueOf(taxiPark.getTariff().getBasicFare()));
-        comfFareLabel.setText(String.valueOf(taxiPark.getTariff().getBasicFare() + taxiPark.getTariff().getComfort()));
-        ecoFareLabel.setText(String.valueOf(taxiPark.getTariff().getBasicFare() + taxiPark.getTariff().getGreen()));
-        nigthFareLabel.setText(String.valueOf(taxiPark.getTariff().getNight()));
-        // filling label with color
+        comfFareLabel.setText(String.valueOf(taxiPark.getTariff().getComfort()));
+        ecoFareLabel.setText(String.valueOf(taxiPark.getTariff().getGreen()));
+        nightFareLabel.setText(String.valueOf(taxiPark.getTariff().getNight()));
+
+        // filling labels with color
         statLabel.setOpaque(true);
 
         // adding actions to radio buttons
@@ -57,32 +58,46 @@ public class MainWindow {
         autoRideRadioGroup.add(autoRideOn);
         autoRideOn.addActionListener(e -> {
             updateLabel.setText("Auto Mode Is On");
+            addRideButton.setEnabled(false);
         });
         autoRideOff.addActionListener(e -> {
             updateLabel.setText("Auto Mode Is Off");
+            addRideButton.setEnabled(true);
         });
+
+
         // adding actions to buttons
-        addTaxiButton.addActionListener(e -> {
+        generateTaxiButton.addActionListener(e -> {
             taxiPark.addRandomCar();
             updateCounters();
             Taxi taxi = taxiPark.getTaxi(Collections.max(taxiPark.getTaxiIDs()));
-            updateLabel.setText(
-                    "<html>"+"Added new taxi!:)"
-                            + "<br>"+"======== CAR ID: " + String.valueOf(taxi.getID()) + " =========="
-                            + "<br>"+taxi.getTaxiType()
-                            + "<br>"+"Driver: "+taxi.getDriver()
-                            + "<br>"+"Brand: " +taxi.getBrand()
-                            + "<br>"+"Color: "+taxi.getColor()
-                            + "<br>"+"Production Year: " +taxi.getProductionYear()
-                            + "<br>"+"Registration Year: " + taxi.getRegistrationYear()
-                            + "<br>"+"Registration Number: " + taxi.getRegNumber()
-                            + "</html>"
-            );
+            updateLabel.setText("<html>"+"ADDED NEW TAXI!:)<br>"+carInfoToHTML(taxi)+ "</html>");
+            updateCarList();
+        });
+        addTaxiButton.addActionListener(e -> {
+            NewCar dialog = new NewCar();
+            dialog.pack();
+            dialog.setVisible(true);
+            dialog.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            dialog.addWindowListener(new WindowAdapter() {
+                @Override
+                public void windowClosed(WindowEvent windowEvent) {
+                    try{
+                        Taxi taxi = taxiPark.getTaxi(Collections.max(taxiPark.getTaxiIDs()));
+                        updateLabel.setText("<html>"+"ADDED NEW TAXI!:)<br>"+carInfoToHTML(taxi)+ "</html>");
+                        updateCounters();
+                        updateCarList();
+                    } catch (NoSuchElementException exception) {
+                        updateLabel.setText("Closed 'Add Taxi' Window");
+                    }
+                }
+            });
+
         });
         removeTaxiButton.addActionListener(e -> {
             ArrayList<Integer> ids = taxiPark.getTaxiIDs();
-            int id = ids.get(new Random().nextInt(ids.size()));
             try{
+                int id = ids.get(new Random().nextInt(ids.size()));
                 Taxi taxi = taxiPark.getTaxi(id);
                 updateLabel.setText(
                         "<html>"+"Removing a taxi!:)"
@@ -98,12 +113,54 @@ public class MainWindow {
                 );
                 taxiPark.removeTaxi(id);
                 updateCounters();
-            } catch (Exception e1) {
-                System.out.println("No more cars left!");
+            } catch (IllegalArgumentException ex) {
+                updateLabel.setText("No more cars left to remove!");
+                System.out.println("No more cars left to remove!");
+            }
+            updateCarList();
+        });
+
+        modifyTariffsButton.addActionListener(e -> {
+            TariffWindow dialog = new TariffWindow();
+            dialog.pack();
+            dialog.setVisible(true);
+            dialog.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            dialog.addWindowListener(new WindowAdapter() {
+                @Override
+                public void windowClosed(WindowEvent windowEvent) {
+                    updateCounters();
+                }
+            });
+        });
+        addRideButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                numOfRides++;
+                updateCounters();
+            }
+        });
+
+
+        // actions with tab panel
+        carListPanel.addComponentListener(new ComponentAdapter() {
+            @Override
+            public void componentShown(ComponentEvent e) {
+
+                String[][] data = taxiPark.getCarsTabledInformation();
+                /*id,type,money,dist, regnumber,brand,color,prodyear,regyear*/
+                String[] columnNames = {"ID", "Type", "Profit", "Distance", "Reg.Number",
+                        "Brand", "Color", "Product.Year", "Reg.Year"};
+
+                DefaultTableModel model = new DefaultTableModel(data, columnNames) {
+                    public boolean isCellEditable(int row, int col) {
+                        return false;
+                    }
+                };
+                taxiTable.setModel(model);
+                taxiTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
             }
 
         });
-
     }
 
     public void updateCounters() {
@@ -111,15 +168,50 @@ public class MainWindow {
         quantityStandart.setText(String.valueOf(taxiPark.getNumberOfCars(0)));
         quantityComfort.setText(String.valueOf(taxiPark.getNumberOfCars(1)));
         quantityGreen.setText(String.valueOf(taxiPark.getNumberOfCars(2)));
+
+        ridesCountLabel.setText(String.valueOf(numOfRides));
+        profitLabel.setText(String.valueOf(taxiPark.getTotalProfit()));
+
+        stFareLabel.setText(String.valueOf(tariff.getBasicFare()));
+        comfFareLabel.setText(String.valueOf(tariff.getComfort()));
+        ecoFareLabel.setText(String.valueOf(tariff.getGreen()));
+        nightFareLabel.setText(String.valueOf(tariff.getNight()));
+    }
+
+    public void updateCarList() {
+
+        String[][] data = taxiPark.getCarsTabledInformation();
+        /*id,type,money,dist, regnumber,brand,color,prodyear,regyear*/
+        String[] columnNames = { "ID", "Type", "Profit", "Distance", "Reg.Number",
+                "Brand", "Color", "Product.Year", "Reg.Year"};
+
+        DefaultTableModel model = new DefaultTableModel(data, columnNames){
+            public boolean isCellEditable(int row, int col){
+                return false;
+            }
+        };
+        taxiTable.setModel(model);
+    }
+
+    public String carInfoToHTML(Taxi taxi) {
+        return "<br>======== CAR ID: " + String.valueOf(taxi.getID()) + " =========="
+                + "<br>"+taxi.getTaxiType() + " Taxi"
+                + "<br>Driver: "+taxi.getDriver()
+                + "<br>Brand: " +taxi.getBrand()
+                + "<br>Color: "+taxi.getColor()
+                + "<br>Production Year: " +taxi.getProductionYear()
+                + "<br>Registration Year: " + taxi.getRegistrationYear()
+                + "<br>Registration Number: " + taxi.getRegNumber();
     }
 
 
     public static void main(String[] args) {
         JFrame f = new JFrame("Таксопарк");
-        f.setContentPane(new MainWindow().panel1);
+        f.setContentPane(new MainWindow().panel);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.pack();
         f.setVisible(true);
+        f.pack();
+
     }
 
 }

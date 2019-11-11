@@ -31,6 +31,6 @@ public class StandardTaxi extends Taxi {
 
     @Override
     public String getTaxiType() {
-        return "Standart Taxi";
+        return "Standard";
     }
 }

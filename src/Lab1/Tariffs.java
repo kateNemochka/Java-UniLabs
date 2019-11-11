@@ -17,9 +17,9 @@ public class Tariffs {
 
     public Tariffs(double basicFare) {
         this.basicFare = basicFare;
-        this.night = basicFare / 4;
-        this.comfort = basicFare / 2;
-        this.green = basicFare / 4;
+        this.night = basicFare * 0.25;
+        this.comfort = basicFare * 1.5;
+        this.green = basicFare * 0.9;
     }
 
     public Tariffs(double basicFare, double night, double comfort, double green) {
@@ -63,22 +63,21 @@ public class Tariffs {
             return getBasicFare();
         }
         else if (taxiType == ComfortTaxi.class) {
-            return getComfort() + getBasicFare();
+            return getComfort();
         }
         else if (taxiType == GreenTaxi.class) {
-            return getGreen() + getBasicFare();
+            return getGreen();
         }
         return 0.0;
     }
 
 
     public double calculateStandart(double distance, int n) {
-        double fare = basicFare + n * night;
-        return fare * distance;
+        return (basicFare + n * night) * distance;
     }
 
     public double calculateComfort(double distance, int n) {
-        return calculateStandart(distance, n) + comfort * distance;
+        return (comfort + n * night) * distance;
     }
 
     public double calculateGreen(double distance, int n) {
@@ -89,7 +88,7 @@ public class Tariffs {
     public void info() {
         System.out.printf("\nFare per kilometer\n\tBasic: %.2f\n\tComfort: %.2f\n" +
                           "\tGreen: %.2f\n\tNight Extra Pay: %.2f\n\n",
-                            basicFare, basicFare+comfort, basicFare+green, night);
+                            basicFare, comfort, green, night);
     }
 
 

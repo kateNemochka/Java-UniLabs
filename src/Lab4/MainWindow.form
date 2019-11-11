@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Lab4.MainWindow">
-  <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="FormLayout">
+  <grid id="27dc6" binding="panel" default-binding="true" layout-manager="FormLayout">
     <rowspec value="center:d:noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
     <rowspec value="center:max(d;4px):noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
+    <rowspec value="center:20px:noGrow"/>
+    <rowspec value="top:10dlu:noGrow"/>
     <rowspec value="center:max(d;4px):noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
-    <rowspec value="center:25px:grow"/>
-    <rowspec value="top:4dlu:noGrow"/>
-    <rowspec value="center:max(d;4px):noGrow"/>
-    <rowspec value="top:4dlu:noGrow"/>
-    <rowspec value="center:max(d;4px):noGrow"/>
-    <rowspec value="top:4dlu:noGrow"/>
-    <rowspec value="center:15px:grow"/>
-    <rowspec value="top:4dlu:noGrow"/>
+    <rowspec value="center:19px:noGrow"/>
+    <rowspec value="top:7dlu:noGrow"/>
     <rowspec value="center:max(d;4px):noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
     <rowspec value="center:max(d;4px):noGrow"/>
@@ -25,15 +21,11 @@
     <rowspec value="top:4dlu:noGrow"/>
     <rowspec value="center:max(d;4px):noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
-    <rowspec value="center:d:grow"/>
-    <rowspec value="top:4dlu:noGrow"/>
     <rowspec value="center:max(d;4px):noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
     <rowspec value="center:max(d;4px):noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
-    <rowspec value="center:max(d;4px):noGrow"/>
-    <rowspec value="top:4dlu:noGrow"/>
-    <rowspec value="center:174px:noGrow"/>
+    <rowspec value="center:200px:noGrow"/>
     <colspec value="center:102px:noGrow"/>
     <colspec value="left:6dlu:noGrow"/>
     <colspec value="fill:85px:noGrow"/>
@@ -45,7 +37,7 @@
       <xy x="20" y="20" width="589" height="595"/>
     </constraints>
     <properties>
-      <background color="-723724"/>
+      <background color="-1"/>
     </properties>
     <border type="etched">
       <font/>
@@ -69,14 +61,15 @@
           <forms defaultalign-horz="false"/>
         </constraints>
         <properties>
-          <enabled value="false"/>
+          <background color="-1316"/>
+          <enabled value="true"/>
           <horizontalTextPosition value="0"/>
           <text value="Додати поїздку"/>
         </properties>
       </component>
       <component id="8a40a" class="javax.swing.JLabel">
         <constraints>
-          <grid row="18" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="14" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <forms top="0" left="10" bottom="0" right="0" defaultalign-horz="false"/>
         </constraints>
         <properties>
@@ -86,7 +79,7 @@
       </component>
       <component id="5809e" class="javax.swing.JLabel" binding="quantityStandart">
         <constraints>
-          <grid row="18" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="14" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <forms defaultalign-horz="false"/>
         </constraints>
         <properties>
@@ -95,7 +88,7 @@
       </component>
       <component id="477e5" class="javax.swing.JLabel">
         <constraints>
-          <grid row="20" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="16" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <forms top="0" left="10" bottom="0" right="0" defaultalign-horz="false"/>
         </constraints>
         <properties>
@@ -104,7 +97,7 @@
       </component>
       <component id="f1093" class="javax.swing.JLabel" binding="quantityComfort">
         <constraints>
-          <grid row="20" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="16" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <forms defaultalign-horz="false"/>
         </constraints>
         <properties>
@@ -113,7 +106,7 @@
       </component>
       <component id="884ee" class="javax.swing.JLabel">
         <constraints>
-          <grid row="22" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="18" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <forms top="0" left="10" bottom="0" right="0" defaultalign-horz="false"/>
         </constraints>
         <properties>
@@ -122,32 +115,11 @@
       </component>
       <component id="1d7e3" class="javax.swing.JLabel" binding="quantityGreen">
         <constraints>
-          <grid row="22" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="18" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <forms defaultalign-horz="false"/>
         </constraints>
         <properties>
           <text value="-1"/>
-        </properties>
-      </component>
-      <component id="cf1f4" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="30" column="0" row-span="1" col-span="7" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-          <forms/>
-        </constraints>
-        <properties>
-          <horizontalAlignment value="0"/>
-          <text value="Зміни"/>
-        </properties>
-      </component>
-      <component id="9769f" class="javax.swing.JLabel" binding="updateLabel">
-        <constraints>
-          <grid row="32" column="0" row-span="1" col-span="7" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-          <forms top="5" left="5" bottom="10" right="5" defaultalign-horz="false" defaultalign-vert="false"/>
-        </constraints>
-        <properties>
-          <enabled value="true"/>
-          <horizontalAlignment value="0"/>
-          <text value=" "/>
         </properties>
       </component>
       <component id="c81cd" class="javax.swing.JLabel">
@@ -166,13 +138,14 @@
           <forms/>
         </constraints>
         <properties>
+          <background color="-1"/>
           <horizontalAlignment value="4"/>
           <text value="On"/>
         </properties>
       </component>
       <component id="6c07c" class="javax.swing.JLabel">
         <constraints>
-          <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
           <forms defaultalign-horz="false" defaultalign-vert="false"/>
         </constraints>
         <properties>
@@ -182,7 +155,7 @@
       </component>
       <component id="251ab" class="javax.swing.JLabel" binding="ridesCountLabel">
         <constraints>
-          <grid row="10" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
           <forms/>
         </constraints>
         <properties>
@@ -191,16 +164,16 @@
       </component>
       <component id="96814" class="javax.swing.JLabel">
         <constraints>
-          <grid row="10" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="8" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
           <forms/>
         </constraints>
         <properties>
-          <text value="Заробіток"/>
+          <text value="Прибуток"/>
         </properties>
       </component>
       <component id="8ab11" class="javax.swing.JLabel" binding="profitLabel">
         <constraints>
-          <grid row="10" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="8" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
           <forms/>
         </constraints>
         <properties>
@@ -209,29 +182,23 @@
       </component>
       <component id="b4c72" class="javax.swing.JLabel" binding="statLabel">
         <constraints>
-          <grid row="8" column="0" row-span="1" col-span="7" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="6" column="0" row-span="1" col-span="7" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
           <forms/>
         </constraints>
         <properties>
           <autoscrolls value="false"/>
-          <background color="-1"/>
+          <background color="-1306"/>
           <doubleBuffered value="false"/>
           <enabled value="true"/>
-          <font name="Arial" size="14"/>
+          <font name="Arial Black" size="14"/>
           <foreground color="-16777216"/>
           <horizontalAlignment value="0"/>
-          <text value="Статистика :)"/>
+          <text value="Статистика"/>
         </properties>
       </component>
-      <vspacer id="41445">
-        <constraints>
-          <grid row="6" column="0" row-span="1" col-span="7" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-          <forms defaultalign-vert="false"/>
-        </constraints>
-      </vspacer>
       <component id="74805" class="javax.swing.JLabel">
         <constraints>
-          <grid row="14" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="10" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
           <forms defaultalign-horz="false" defaultalign-vert="false"/>
         </constraints>
         <properties>
@@ -240,15 +207,9 @@
           <text value="Кількість автомобілів"/>
         </properties>
       </component>
-      <vspacer id="48893">
-        <constraints>
-          <grid row="12" column="0" row-span="1" col-span="7" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-          <forms defaultalign-vert="false"/>
-        </constraints>
-      </vspacer>
       <component id="b58d5" class="javax.swing.JLabel">
         <constraints>
-          <grid row="16" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="12" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
           <forms top="0" left="10" bottom="0" right="0" defaultalign-horz="false" defaultalign-vert="false"/>
         </constraints>
         <properties>
@@ -259,7 +220,7 @@
       </component>
       <component id="a62ac" class="javax.swing.JLabel" binding="quantityAll">
         <constraints>
-          <grid row="16" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="12" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
           <forms/>
         </constraints>
         <properties>
@@ -269,7 +230,7 @@
       </component>
       <component id="d2d1f" class="javax.swing.JLabel">
         <constraints>
-          <grid row="14" column="4" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="2" indent="0" use-parent-layout="false"/>
+          <grid row="10" column="4" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="2" indent="0" use-parent-layout="false"/>
           <forms defaultalign-vert="false"/>
         </constraints>
         <properties>
@@ -280,7 +241,7 @@
       </component>
       <component id="4502" class="javax.swing.JLabel">
         <constraints>
-          <grid row="16" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="12" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
           <forms/>
         </constraints>
         <properties>
@@ -289,7 +250,7 @@
       </component>
       <component id="b9069" class="javax.swing.JLabel">
         <constraints>
-          <grid row="18" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="14" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
           <forms/>
         </constraints>
         <properties>
@@ -298,7 +259,7 @@
       </component>
       <component id="e164c" class="javax.swing.JLabel">
         <constraints>
-          <grid row="20" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="16" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
           <forms/>
         </constraints>
         <properties>
@@ -307,7 +268,7 @@
       </component>
       <component id="a83f3" class="javax.swing.JLabel">
         <constraints>
-          <grid row="22" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="18" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
           <forms/>
         </constraints>
         <properties>
@@ -316,7 +277,7 @@
       </component>
       <component id="12915" class="javax.swing.JLabel" binding="stFareLabel">
         <constraints>
-          <grid row="16" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="12" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
           <forms/>
         </constraints>
         <properties>
@@ -325,7 +286,7 @@
       </component>
       <component id="54d0b" class="javax.swing.JLabel" binding="comfFareLabel">
         <constraints>
-          <grid row="18" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="14" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
           <forms/>
         </constraints>
         <properties>
@@ -334,36 +295,31 @@
       </component>
       <component id="4a232" class="javax.swing.JLabel" binding="ecoFareLabel">
         <constraints>
-          <grid row="20" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="16" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
           <forms/>
         </constraints>
         <properties>
           <text value="-1"/>
         </properties>
       </component>
-      <component id="ff337" class="javax.swing.JLabel" binding="nigthFareLabel">
+      <component id="ff337" class="javax.swing.JLabel" binding="nightFareLabel">
         <constraints>
-          <grid row="22" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="18" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
           <forms/>
         </constraints>
         <properties>
           <text value="-1"/>
         </properties>
       </component>
-      <vspacer id="f6ed5">
-        <constraints>
-          <grid row="24" column="0" row-span="1" col-span="7" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-          <forms defaultalign-vert="false"/>
-        </constraints>
-      </vspacer>
       <component id="a23e7" class="javax.swing.JButton" binding="addTaxiButton">
         <constraints>
-          <grid row="26" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="20" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <forms/>
         </constraints>
         <properties>
-          <background color="-2763307"/>
-          <contentAreaFilled value="false"/>
+          <background color="-1316"/>
+          <contentAreaFilled value="true"/>
+          <enabled value="true"/>
           <text value="Додати нове таксі"/>
         </properties>
       </component>
@@ -373,26 +329,95 @@
           <forms/>
         </constraints>
         <properties>
+          <background color="-1"/>
           <selected value="true"/>
           <text value="Off"/>
         </properties>
       </component>
-      <component id="92125" class="javax.swing.JButton" binding="removeTaxiButton">
+      <component id="33208" class="javax.swing.JButton" binding="modifyTariffsButton">
         <constraints>
-          <grid row="28" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="20" column="4" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <forms/>
         </constraints>
         <properties>
+          <background color="-1316"/>
+          <text value="Змінити тарифи"/>
+        </properties>
+      </component>
+      <tabbedpane id="35c0a" binding="tabbedPane" default-binding="true">
+        <constraints>
+          <grid row="24" column="0" row-span="1" col-span="7" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="200" height="200"/>
+          </grid>
+          <forms defaultalign-horz="false" defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <background color="-1"/>
+          <font size="11"/>
+          <tabLayoutPolicy value="1"/>
+          <tabPlacement value="1"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <scrollpane id="c53bf" binding="carListPanel">
+            <constraints>
+              <tabbedpane title="Список Автомобілів"/>
+            </constraints>
+            <properties/>
+            <clientProperties>
+              <html.disable class="java.lang.Boolean" value="false"/>
+            </clientProperties>
+            <border type="none"/>
+            <children>
+              <component id="3bef6" class="javax.swing.JTable" binding="taxiTable">
+                <constraints/>
+                <properties/>
+              </component>
+            </children>
+          </scrollpane>
+          <grid id="d869e" binding="updatePanel" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints>
+              <tabbedpane title="Log"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="9769f" class="javax.swing.JLabel" binding="updateLabel">
+                <constraints border-constraint="Center"/>
+                <properties>
+                  <background color="-1"/>
+                  <enabled value="true"/>
+                  <font name="Source Code Pro" size="10"/>
+                  <horizontalAlignment value="2"/>
+                  <horizontalTextPosition value="11"/>
+                  <text value=" "/>
+                  <verticalAlignment value="1"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </tabbedpane>
+      <component id="92125" class="javax.swing.JButton" binding="removeTaxiButton">
+        <constraints>
+          <grid row="22" column="4" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <forms/>
+        </constraints>
+        <properties>
+          <background color="-1316"/>
           <text value="Видалити таксі"/>
         </properties>
       </component>
-      <component id="33208" class="javax.swing.JButton" binding="змінитиТарифиButton" default-binding="true">
+      <component id="5121e" class="javax.swing.JButton" binding="generateTaxiButton">
         <constraints>
-          <grid row="26" column="4" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="22" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <forms/>
         </constraints>
         <properties>
-          <text value="Змінити тарифи"/>
+          <background color="-1316"/>
+          <contentAreaFilled value="true"/>
+          <enabled value="true"/>
+          <text value="Згенерувати випадкове таксі"/>
         </properties>
       </component>
     </children>

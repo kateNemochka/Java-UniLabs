@@ -50,7 +50,7 @@ public class MapTaxiPark {
         String brand = brands[random.nextInt(brands.length)];
         String color = colors[random.nextInt(colors.length)];
 
-        addTaxi(type, brand, regNumber, color, productionYear, registrationYear);
+        addTaxi(type, "some driver", brand, regNumber, color, productionYear, registrationYear);
     }
 
     public void addTaxi(int type, String brand, String regNumber, String color,
@@ -176,7 +176,25 @@ public class MapTaxiPark {
                 + "Driver: " + taxi.getDriver()
                 + "\nTotal Profit: " + String.valueOf(taxi.getProfit())
                 + "\nTotal Distance: " + String.valueOf(taxi.getTotalDistance());
+    }
 
+    public String[][] getCarsTabledInformation() {
+        /*id,type,money,dist, regnumber,brand,color,prodyear,regyear*/
+        String[][] info = new String[cars.size()][9];
+        int row = 0;
+        for (Taxi taxi : cars.values()) {
+            info[row][0] = String.valueOf(taxi.getID());
+            info[row][1] = String.valueOf(taxi.getTaxiType());
+            info[row][2] = String.valueOf(taxi.getProfit());
+            info[row][3] = String.valueOf(taxi.getTotalDistance());
+            info[row][4] = String.valueOf(taxi.getRegNumber());
+            info[row][5] = String.valueOf(taxi.getBrand());
+            info[row][6] = String.valueOf(taxi.getColor());
+            info[row][7] = String.valueOf(taxi.getProductionYear());
+            info[row][8] = String.valueOf(taxi.getRegistrationYear());
+            ++row;
+        }
+        return info;
     }
 
     public ArrayList<Taxi> getTaxisWithoutDriver() {

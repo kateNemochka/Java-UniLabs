@@ -31,6 +31,6 @@ public class GreenTaxi extends Taxi{
 
     @Override
     public String getTaxiType() {
-        return "Green Taxi";
+        return "Green";
     }
 }

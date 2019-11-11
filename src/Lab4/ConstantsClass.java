@@ -6,4 +6,5 @@ import Lab3.MapTaxiPark;
 abstract class ConstantsClass {
     public static MapTaxiPark taxiPark = new MapTaxiPark(15);
     public static Tariffs tariff = taxiPark.getTariff();
+    public static int numOfRides = 0;
 }
