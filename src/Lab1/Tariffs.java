@@ -81,7 +81,7 @@ public class Tariffs {
     }
 
     public double calculateGreen(double distance, int n) {
-        return calculateStandart(distance, n) + green * distance;
+        return (green + n * night) * distance;
     }
 
 

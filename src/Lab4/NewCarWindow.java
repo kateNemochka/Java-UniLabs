@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.Calendar;
 
-public class NewCar extends JDialog {
+public class NewCarWindow extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
@@ -15,14 +15,17 @@ public class NewCar extends JDialog {
     private JLabel warningLabel;
     private int type;
 
-    public NewCar() {
+    public NewCarWindow() {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
 
+        // styling warning message
         warningLabel.setForeground(Color.RED);
         warningLabel.setFont(new Font(warningLabel.getFont().getName(), Font.BOLD, 10));
 
+
+        // DEFAULT LISTENERS
         buttonOK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onOK();
@@ -49,7 +52,8 @@ public class NewCar extends JDialog {
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
 
-        // FIELDS ACTION LISTENERS
+        // CUSTOM LISTENERS
+        // selecting a type of taxi from combo box
         typesComboBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -60,7 +64,7 @@ public class NewCar extends JDialog {
 
 
         // -=* CHECKS *=-
-        // checks for integer values
+        // only digits/numbers are allowed in this text field
         regYearTextField.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
@@ -73,7 +77,7 @@ public class NewCar extends JDialog {
                 integerFilter(prodYearTextField, e);
             }
         });
-        // checks for the correct year value
+        // checks for the correct year value, unblocking blocked element
         prodYearTextField.addFocusListener(new FocusAdapter() {
             public void focusLost(FocusEvent event) {
                 try {
@@ -85,7 +89,6 @@ public class NewCar extends JDialog {
                     System.out.println("Format Error at prodYearTextField");
                     prodYearTextField.setEditable(true);
                 }
-
             }
         });
         regYearTextField.addFocusListener(new FocusAdapter() {
@@ -122,6 +125,12 @@ public class NewCar extends JDialog {
             error = true;
             warningLabel.setText("Не всі поля заповнені!");
         }
+        int year = Calendar.getInstance().get(Calendar.YEAR);
+        if (Integer.parseInt(prodYearTextField.getText()) > year ||
+                Integer.parseInt(regYearTextField.getText()) > year) {
+            error = true;
+            warningLabel.setText("<html>Рік не може бути пізнішим<br>за поточний</html>");
+        }
         if (!error) {
             dispose();
         }
@@ -132,7 +141,7 @@ public class NewCar extends JDialog {
         dispose();
     }
 
-
+    // filter that allows to use digits and dot symbol only
     private void integerFilter(JTextField tf, KeyEvent ke) {
         String value = tf.getText();
         int l = value.length();
@@ -149,7 +158,7 @@ public class NewCar extends JDialog {
 
 
     public static void main(String[] args) {
-        NewCar dialog = new NewCar();
+        NewCarWindow dialog = new NewCarWindow();
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);

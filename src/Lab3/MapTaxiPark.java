@@ -160,6 +160,12 @@ public class MapTaxiPark {
         taxis.forEach(Taxi::taxiInfo);
     }
 
+    // * створювати колекцію, яка містить тільки унікальні елементи *
+    public Set<String> getAvailableTaxiTypes() {
+        return getCars().values().stream()
+                .map(Taxi::getTaxiType)
+                .collect(Collectors.toSet());
+    }
 
     // ФІЛЬТРУВАННЯ об'єктів колекції за вибраною ознакою
     public ArrayList<Taxi> getTaxisOfType(int type) {
@@ -227,10 +233,10 @@ public class MapTaxiPark {
                 .reduce(0, Double::sum);
     }
 
-    private void addRandomRides(int numOfRides) {
+    public void addRandomRides(int numOfRides) {
         while (numOfRides-- > 0) {
             int type = random.nextInt(3);
-            double distance = random.nextDouble()*random.nextInt(200);
+            double distance = Math.round(random.nextDouble()*random.nextInt(50));
             boolean night = random.nextBoolean();
             addRide(type, distance, night);
         }

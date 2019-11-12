@@ -20,9 +20,14 @@ public class TariffWindow extends JDialog {
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
         updateFareValues();
+
+        // styling warning message
         warningLabel.setForeground(Color.RED);
         warningLabel.setFont(new Font(warningLabel.getFont().getName(), Font.BOLD, 10));
 
+
+
+        // DEFAULT LISTENERS
         buttonOK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 onOK();
@@ -41,7 +46,6 @@ public class TariffWindow extends JDialog {
                 onCancel();
             }
         });
-
         // call onCancel() on ESCAPE
         contentPane.registerKeyboardAction(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -50,7 +54,9 @@ public class TariffWindow extends JDialog {
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
 
-        // KEY LISTENERS
+        // CUSTOM LISTENERS
+        // -=* CHECKS *=-
+        // only digits/numbers are allowed in this text field
         basicTextField.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
@@ -76,7 +82,7 @@ public class TariffWindow extends JDialog {
             }
         });
 
-        // FOCUS LISTENERS
+        // unblocking blocked element when nothing is being entered in it
         basicTextField.addFocusListener(new FocusAdapter() {
             public void focusLost(FocusEvent event) {
                 basicTextField.setEditable(true);
@@ -109,9 +115,9 @@ public class TariffWindow extends JDialog {
         if (!comfort.isEmpty())
             tariff.setComfort(Double.parseDouble(comfort));
         if (!green.isEmpty())
-            tariff.setBasicFare(Double.parseDouble(green));
+            tariff.setGreen(Double.parseDouble(green));
         if (!night.isEmpty())
-            tariff.setComfort(Double.parseDouble(night));
+            tariff.setNight(Double.parseDouble(night));
 
         taxiPark.setTariff(tariff);
         dispose();
@@ -122,7 +128,7 @@ public class TariffWindow extends JDialog {
         dispose();
     }
 
-
+    // updating fare values of current tariff object
     private void updateFareValues() {
         baseFareLabel.setText(String.valueOf(tariff.getBasicFare()));
         comfortFareLabel.setText(String.valueOf(tariff.getComfort()));
@@ -130,6 +136,7 @@ public class TariffWindow extends JDialog {
         nightFareLabel.setText(String.valueOf(tariff.getNight()));
     }
 
+    // filter that allows to use digits and dot symbol only
     private void filter(JTextField tf, KeyEvent ke) {
         String value = tf.getText();
         int l = value.length();
@@ -141,7 +148,6 @@ public class TariffWindow extends JDialog {
         } else {
             tf.setEditable(false);
             warningLabel.setText("Вводьте в поле лише цифри або крапку");
-            warningLabel.setForeground(Color.RED);
         }
     }
 

@@ -17,14 +17,14 @@ public class StandardTaxi extends Taxi {
 
     @Override
     public void addRide(Tariffs tariff, double distance) {
-        double fare = tariff.calculateGreen(distance, 0);
+        double fare = tariff.calculateStandart(distance, 0);
         addDistance(distance);
         addProfit(fare);
     }
 
     @Override
     public void addNightRide(Tariffs tariff, double distance) {
-        double fare = tariff.calculateGreen(distance, 1);
+        double fare = tariff.calculateStandart(distance, 1);
         addDistance(distance);
         addProfit(fare);
     }
