@@ -16,6 +16,11 @@ public class TariffWindow extends JDialog {
     private JLabel warningLabel;
 
     public TariffWindow() {
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        int width = screenSize.width/2;
+        int height = screenSize.height/2;
+        this.setLocation(width - 200,height - 250);
+
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);

@@ -4,6 +4,7 @@ import Lab1.Taxi;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,11 +23,11 @@ public class MainWindow extends ConstantsClass {
     private JButton addTaxiButton, removeTaxiButton, generateTaxiButton;
     private JRadioButton autoRideOn, autoRideOff;
     private JButton modifyTariffsButton;
+    private JButton taxiParkModelButton;
     private JTabbedPane tabbedPane;
     private JPanel updatePanel;
     private JTable taxiTable;
     private JScrollPane carListPanel;
-
 
 
     public MainWindow() {
@@ -86,7 +87,7 @@ public class MainWindow extends ConstantsClass {
             taxiPark.addRandomCar();
             updateCounters();
             Taxi taxi = taxiPark.getTaxi(Collections.max(taxiPark.getTaxiIDs()));
-            updateLabel.setText("<html>"+"ADDED NEW TAXI!:)<br>"+carInfoToHTML(taxi)+ "</html>");
+            updateLabel.setText("<html>" + "ADDED NEW TAXI!:)<br>" + carInfoToHTML(taxi) + "</html>");
             updateCarList();
         });
         // adding a new car with a dialog window
@@ -98,9 +99,9 @@ public class MainWindow extends ConstantsClass {
             dialog.addWindowListener(new WindowAdapter() {
                 @Override
                 public void windowClosed(WindowEvent windowEvent) {
-                    try{
+                    try {
                         Taxi taxi = taxiPark.getTaxi(Collections.max(taxiPark.getTaxiIDs()));
-                        updateLabel.setText("<html>"+"ADDED NEW TAXI!:)<br>"+carInfoToHTML(taxi)+ "</html>");
+                        updateLabel.setText("<html>" + "ADDED NEW TAXI!:)<br>" + carInfoToHTML(taxi) + "</html>");
                         updateCounters();
                         updateCarList();
                     } catch (NoSuchElementException exception) {
@@ -131,11 +132,11 @@ public class MainWindow extends ConstantsClass {
             });*/
 
             ArrayList<Integer> ids = taxiPark.getTaxiIDs();
-            try{
+            try {
                 int id = ids.get(new Random().nextInt(ids.size()));
                 Taxi taxi = taxiPark.getTaxi(id);
                 updateLabel.setText(
-                        "<html>"+"Removing a taxi!:)" + carInfoToHTML(taxi) + "</html>"
+                        "<html>" + "Removing a taxi!:)" + carInfoToHTML(taxi) + "</html>"
                 );
                 profitOfGone += taxi.getProfit();
                 taxiPark.removeTaxi(id);
@@ -196,6 +197,30 @@ public class MainWindow extends ConstantsClass {
             }
 
         });
+        taxiParkModelButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JPanel mPanel = new TaxiParkModel().getMainPanel();
+                JFrame f = new JFrame("Taxi Park Model");
+
+                Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+                int width = screenSize.width/2;
+                int height = screenSize.height/2;
+                f.setLocation(width - 200,height - 250);
+
+                f.setContentPane(mPanel);
+                f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                f.setVisible(true);
+                f.pack();
+                f.addWindowListener(new WindowAdapter() {
+                    @Override
+                    public void windowClosed(WindowEvent windowEvent) {
+                        updateCounters();
+                        updateCarList();
+                    }
+                });
+            }
+        });
     }
 
     // updating statistics values after changes
@@ -219,11 +244,11 @@ public class MainWindow extends ConstantsClass {
 
         String[][] data = taxiPark.getCarsTabledInformation();
         /*id,type,money,dist, regnumber,brand,color,prodyear,regyear*/
-        String[] columnNames = { "ID", "Type", "Profit", "Distance", "Reg.Number",
+        String[] columnNames = {"ID", "Type", "Profit", "Distance", "Reg.Number",
                 "Brand", "Color", "Product.Year", "Reg.Year"};
 
-        DefaultTableModel model = new DefaultTableModel(data, columnNames){
-            public boolean isCellEditable(int row, int col){
+        DefaultTableModel model = new DefaultTableModel(data, columnNames) {
+            public boolean isCellEditable(int row, int col) {
                 return false;
             }
         };
@@ -233,23 +258,27 @@ public class MainWindow extends ConstantsClass {
     // creating html with car information for a log tab
     public String carInfoToHTML(Taxi taxi) {
         return "<br>======== CAR ID: " + String.valueOf(taxi.getID()) + " =========="
-                + "<br>"+taxi.getTaxiType() + " Taxi"
-                + "<br>Driver: "+taxi.getDriver()
-                + "<br>Brand: " +taxi.getBrand()
-                + "<br>Color: "+taxi.getColor()
-                + "<br>Production Year: " +taxi.getProductionYear()
+                + "<br>" + taxi.getTaxiType() + " Taxi"
+                + "<br>Driver: " + taxi.getDriver()
+                + "<br>Brand: " + taxi.getBrand()
+                + "<br>Color: " + taxi.getColor()
+                + "<br>Production Year: " + taxi.getProductionYear()
                 + "<br>Registration Year: " + taxi.getRegistrationYear()
                 + "<br>Registration Number: " + taxi.getRegNumber();
     }
 
 
     public static void main(String[] args) {
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        int width = screenSize.width/2;
+        int height = screenSize.height/2;
+
         JFrame f = new JFrame("Таксопарк");
+        f.setLocation(width - 200,height - 250);
         f.setContentPane(new MainWindow().panel);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setVisible(true);
         f.pack();
 
     }
-
 }

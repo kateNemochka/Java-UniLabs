@@ -2,21 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a0aaff0-27f2-4d7a-b25f-451f941e395b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Lab4/AddRideWindow.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Lab4/AddRideWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Lab4/RemoveCarWindow.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Lab4/RemoveCarWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Lab4/TaxiParkModel.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Lab4/TaxiParkModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Lab5/CGoL.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Lab5/CGoL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Lab5/examples/ConwayGameOfLife.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Lab5/examples/grafics/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Lab5/examples/grafics/MouseFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Lab5/examples/grafics/MousePanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Lab5/labTask" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lab6Task" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab1/StandardTaxi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab1/StandardTaxi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab1/Tariffs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab1/Tariffs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab3/MapTaxiPark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab3/MapTaxiPark.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab4/ConstantsClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab4/ConstantsClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lab4/AddRideWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab4/AddRideWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lab4/MainWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab4/MainWindow.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Lab4/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab4/MainWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab4/NewCar.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab4/NewCarWindow.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab4/NewCar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab4/NewCarWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lab4/TariffWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab4/TariffWindow.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lab4/NewCarWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab4/NewCarWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Lab4/TariffWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lab4/TariffWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/example.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,6 +55,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\IdeaProjects\PTPractice\src\Lab4" />
       <recent name="C:\Users\Kate\IdeaProjects\PTPractice\src\Practice2\ABCD" />
     </key>
   </component>
@@ -69,8 +72,21 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.MainWindow">
-    <configuration name="AddRideWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Lab4.AddRideWindow" />
+    <configuration name="CGoL" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Lab5.CGoL" />
+      <module name="ProgrammingTechnologies" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Lab4.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CirclesTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Lab4.CirclesTest" />
       <module name="ProgrammingTechnologies" />
       <extension name="coverage">
         <pattern>
@@ -83,8 +99,14 @@
       </method>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="MAIN_CLASS_NAME" value="Lab5.examples.grafics.Main" />
       <module name="ProgrammingTechnologies" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Lab5.examples.grafics.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -102,8 +124,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NewCarWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Lab4.NewCarWindow" />
+    <configuration name="TaxiParkModel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Lab4.TaxiParkModel" />
       <module name="ProgrammingTechnologies" />
       <extension name="coverage">
         <pattern>
@@ -115,20 +137,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="example" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="example" />
-      <module name="ProgrammingTechnologies" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.MainWindow" />
+        <item itemvalue="Application.CGoL" />
+        <item itemvalue="Application.TaxiParkModel" />
+        <item itemvalue="Application.CirclesTest" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.NewCarWindow" />
-        <item itemvalue="Application.AddRideWindow" />
-        <item itemvalue="Application.example" />
       </list>
     </recent_temporary>
   </component>
@@ -199,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573508921662</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="debugged all files except RemoveCarWindow (don't know how to do it yet)">
+      <created>1573529186460</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1573529186460</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -224,6 +246,7 @@
     <MESSAGE value="- Created basic Lab4 interface" />
     <MESSAGE value="Finished editing TariffWindow class" />
     <MESSAGE value="updated TariffWindow, created NewCar window" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated TariffWindow, created NewCar window" />
+    <MESSAGE value="debugged all files except RemoveCarWindow (don't know how to do it yet)" />
+    <option name="LAST_COMMIT_MESSAGE" value="debugged all files except RemoveCarWindow (don't know how to do it yet)" />
   </component>
 </project>

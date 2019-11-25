@@ -25,6 +25,8 @@
     <rowspec value="top:4dlu:noGrow"/>
     <rowspec value="center:max(d;4px):noGrow"/>
     <rowspec value="top:4dlu:noGrow"/>
+    <rowspec value="center:max(d;4px):noGrow"/>
+    <rowspec value="top:4dlu:noGrow"/>
     <rowspec value="center:200px:noGrow"/>
     <colspec value="center:102px:noGrow"/>
     <colspec value="left:6dlu:noGrow"/>
@@ -346,7 +348,7 @@
       </component>
       <tabbedpane id="35c0a" binding="tabbedPane" default-binding="true">
         <constraints>
-          <grid row="24" column="0" row-span="1" col-span="7" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+          <grid row="26" column="0" row-span="1" col-span="7" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="200" height="200"/>
           </grid>
           <forms defaultalign-horz="false" defaultalign-vert="false"/>
@@ -418,6 +420,15 @@
           <contentAreaFilled value="true"/>
           <enabled value="true"/>
           <text value="Згенерувати випадкове таксі"/>
+        </properties>
+      </component>
+      <component id="f6ada" class="javax.swing.JButton" binding="taxiParkModelButton">
+        <constraints>
+          <grid row="24" column="0" row-span="1" col-span="7" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <forms/>
+        </constraints>
+        <properties>
+          <text value="Модель таксопарку"/>
         </properties>
       </component>
     </children>
